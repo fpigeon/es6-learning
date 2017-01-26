@@ -229,18 +229,28 @@
 
 // console.log(frank.foo)
 
-function log(strategy) {
-    strategy.handle()
-}
+// function log(strategy) {
+//     strategy.handle()
+// }
 
-class ConsoleLogger {
-    handle() {
-        console.log('using console strategy to log.')
-    }
-}
+// class ConsoleLogger {
+//     handle() {
+//         console.log('using console strategy to log.')
+//     }
+// }
 
-log(new ConsoleLogger)
+// log(new ConsoleLogger)
 
+
+import { TaskCollection, foo } from './TaskCollection'
+
+new TaskCollection([
+    'go to the store',
+    'finish screen cast',
+    'eat cake'
+]).dump()
+
+console.log(foo)
 
 
 

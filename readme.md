@@ -402,5 +402,61 @@ class ConsoleLogger {
 log(new ConsoleLogger)
 ```
 
+## Modules
+Organizing JavaScript for large projects in 2005 was a bit of a nightmare. It wasn't abnormal to find twenty different script imports in an HTML file. And, worse, it was up to you, the developer, to understand and remember the order to which each of your scripts must be imported. To say it was all a dependency nightmare is an understatement. Luckily, in recent years, modules have come to the rescue!
+
+So first we add a new file in the same directory called `TaskCollection.js`. The contents of this module will be. Notice that we are exporting the class via `export` command.
+
+```js
+export class TaskCollection {
+    constructor(tasks = []) {
+        this.tasks = tasks
+    }
+    dump() {
+        console.log(this.tasks)
+    }
+}
+
+// we can export many other things too like
+export let foo = 'bar'
+```
+
+Next back in our main js file `app.js` we can import the module like using the `import` command
+
+```js
+import { TaskCollection, foo } from './TaskCollection'
+
+new TaskCollection([
+    'go to the store',
+    'finish screen cast',
+    'eat cake'
+]).dump()
+
+console.log(foo)
+```
+
+To clean things up, you can refactor your `TaskCollection.js` by adding the export at the bottom of the class.
+
+```js
+class TaskCollection {
+    constructor(tasks = []) {
+        this.tasks = tasks
+    }
+    dump() {
+        console.log(this.tasks)
+    }
+}
+
+export default TaskCollection
+```
+
+and then import it like this. Notice that you don't need the `{}` when you export it via `default`
+
+```js
+import TaskCollection from './TaskCollection'
+```
+
+
+
 
 [1]: https://laracasts.com/series/es6-cliffsnotes/
