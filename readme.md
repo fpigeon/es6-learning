@@ -456,6 +456,9 @@ and then import it like this. Notice that you don't need the `{}` when you expor
 import TaskCollection from './TaskCollection'
 ```
 
+## Webpack
+But, now, let's switch over to Webpack, which has a much larger community and plugin ecosystem. We'll set up a Webpack config file, transpile ES2015, and even peek at Laravel Elixir 6.0's seamless Webpack integration.
+
 
 
 

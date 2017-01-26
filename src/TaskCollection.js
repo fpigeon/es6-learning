@@ -1,4 +1,4 @@
-export class TaskCollection {
+class TaskCollection {
     constructor(tasks = []) {
         this.tasks = tasks
     }
@@ -7,5 +7,4 @@ export class TaskCollection {
     }
 }
 
-// we can export many other things too like
-export let foo = 'bar'
+export default TaskCollection
