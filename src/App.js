@@ -169,25 +169,78 @@
 // })
 
 //old
-function greet(person) {
-    let name = person.name
-    let age = person.age
+// function greet(person) {
+//     let name = person.name
+//     let age = person.age
 
-    console.log('old.Hello, ' + name + '. You are ' + age + ' years old.')
-}
+//     console.log('old.Hello, ' + name + '. You are ' + age + ' years old.')
+// }
 
-greet({
-    name: 'Luke',
-    age: 32
-})
+// greet({
+//     name: 'Luke',
+//     age: 32
+// })
+
+// //new 
+// function greet({name, age}) {
+//     console.log(`Hello, ${name}. You are ${age} years old.`)
+// }
+
+// greet({
+//     name: 'Luke',
+//     age: 32
+// })
+
+//old 
+// function User(username, email) {
+//     this.username = username
+//     this.email = email
+
+// }
+// User.prototype.changeEmail = function(newEmail){
+//     this.email = newEmail
+// }
+
+// var user = new User('Frank Pigeon', 'frank@gmail.com')
+// user.changeEmail('new@gmail.com')
+
+// console.dir(user)
 
 //new 
-function greet({name, age}) {
-    console.log(`Hello, ${name}. You are ${age} years old.`)
+
+// class User{
+//     constructor(username, email) {
+//         this.username = username
+//         this.email = email
+//     }
+//     static register(...args) {
+//         return new User(...args)
+//     }
+//     // getter 
+//     get foo(){
+//         return 'foo'
+//     }
+//     changeEmail(newEmail) {
+//         this.email = newEmail
+//     }
+// }
+
+// let frank = User.register("Frank Pigeon", "frank@gmail.com")
+
+// console.log(frank.foo)
+
+function log(strategy) {
+    strategy.handle()
 }
 
-greet({
-    name: 'Luke',
-    age: 32
-})
+class ConsoleLogger {
+    handle() {
+        console.log('using console strategy to log.')
+    }
+}
+
+log(new ConsoleLogger)
+
+
+
 

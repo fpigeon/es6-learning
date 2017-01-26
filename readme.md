@@ -302,5 +302,105 @@ greet({
 })
 ```
 
+## Classes in ES6
+ES6 classes are particularly appealing to those of us who predominantly work in traditional server-side languages.
+
+```js
+//old 
+function User(username, email) {
+    this.username = username
+    this.email = email
+
+}
+User.prototype.changeEmail = function(newEmail){
+    this.email = newEmail
+}
+
+var user = new User('Frank Pigeon', 'frank@gmail.com')
+user.changeEmail('new@gmail.com')
+
+console.dir(user)
+```
+
+```js
+//new 
+class User{
+    constructor(username, email){
+        this.username = username
+        this.email = email
+    }
+    changeEmail(newEmail) {
+        this.email = newEmail
+    }
+}
+
+let frank = new User("Frank Pigeon", "frank@gmail.com")
+frank.changeEmail("newemail.com")
+
+console.dir(frank)
+```
+
+Static Method example
+
+```js
+class User{
+    constructor(username, email) {
+        this.username = username
+        this.email = email
+    }
+    static register(username, email) {
+        return new User(username, email)
+    }
+    changeEmail(newEmail) {
+        this.email = newEmail
+    }
+}
+
+let frank = User.register("Frank Pigeon", "frank@gmail.com")
+
+console.dir(frank)
+```
+
+We can refactor to add the spread operator `...` and add a getter method
+
+```js
+class User{
+    constructor(username, email) {
+        this.username = username
+        this.email = email
+    }
+    static register(...args) {
+        return new User(...args)
+    }
+    // getter 
+    get foo(){
+        return 'foo'
+    }
+    changeEmail(newEmail) {
+        this.email = newEmail
+    }
+}
+
+let frank = User.register("Frank Pigeon", "frank@gmail.com")
+
+console.log(frank.foo)
+```
+
+Another Class example passed thru as function agruments
+
+```js
+function log(strategy) {
+    strategy.handle()
+}
+
+class ConsoleLogger {
+    handle() {
+        console.log('using console strategy to log.')
+    }
+}
+
+log(new ConsoleLogger)
+```
+
 
 [1]: https://laracasts.com/series/es6-cliffsnotes/

@@ -1,5 +1,9 @@
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 // // Let and Const
 // function fire(bool) {
 //     let foo = 'bar'
@@ -171,27 +175,83 @@
 // })
 
 //old
-function greet(person) {
-    var name = person.name;
-    var age = person.age;
+// function greet(person) {
+//     let name = person.name
+//     let age = person.age
 
-    console.log('old.Hello, ' + name + '. You are ' + age + ' years old.');
-}
+//     console.log('old.Hello, ' + name + '. You are ' + age + ' years old.')
+// }
 
-greet({
-    name: 'Luke',
-    age: 32
-});
+// greet({
+//     name: 'Luke',
+//     age: 32
+// })
+
+// //new 
+// function greet({name, age}) {
+//     console.log(`Hello, ${name}. You are ${age} years old.`)
+// }
+
+// greet({
+//     name: 'Luke',
+//     age: 32
+// })
+
+//old 
+// function User(username, email) {
+//     this.username = username
+//     this.email = email
+
+// }
+// User.prototype.changeEmail = function(newEmail){
+//     this.email = newEmail
+// }
+
+// var user = new User('Frank Pigeon', 'frank@gmail.com')
+// user.changeEmail('new@gmail.com')
+
+// console.dir(user)
 
 //new 
-function greet(_ref) {
-    var name = _ref.name,
-        age = _ref.age;
 
-    console.log('Hello, ' + name + '. You are ' + age + ' years old.');
+// class User{
+//     constructor(username, email) {
+//         this.username = username
+//         this.email = email
+//     }
+//     static register(...args) {
+//         return new User(...args)
+//     }
+//     // getter 
+//     get foo(){
+//         return 'foo'
+//     }
+//     changeEmail(newEmail) {
+//         this.email = newEmail
+//     }
+// }
+
+// let frank = User.register("Frank Pigeon", "frank@gmail.com")
+
+// console.log(frank.foo)
+
+function log(strategy) {
+    strategy.handle();
 }
 
-greet({
-    name: 'Luke',
-    age: 32
-});
+var ConsoleLogger = function () {
+    function ConsoleLogger() {
+        _classCallCheck(this, ConsoleLogger);
+    }
+
+    _createClass(ConsoleLogger, [{
+        key: 'handle',
+        value: function handle() {
+            console.log('using console strategy to log.');
+        }
+    }]);
+
+    return ConsoleLogger;
+}();
+
+log(new ConsoleLogger());
