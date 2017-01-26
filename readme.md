@@ -73,6 +73,26 @@ names = names.map((name) => name + ' is cool.')
 console.log(names)
 ```
 
+## Default Parameters
+ES6 Supports passing in default parameters
+
+```js
+// old
+function applyDiscount(cost, discount) {
+    discount = discount || .10
+
+    return cost - (cost * discount)
+}
+
+alert(applyDiscount(100))
+
+// new
+function applyDiscount(cost, discount = .10) {
+    return cost - (cost * discount)
+}
+
+alert(applyDiscount(100))
+```
 
 
 

@@ -1,76 +1,72 @@
-'use strict';
+"use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+// // Let and Const
+// function fire(bool) {
+//     let foo = 'bar'
+//     if (bool) {
+//         console.log(foo)
+//     } else {
+//         console.log(foo)
+//     }
+// }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+// fire(false)
 
-// Let and Const
-function fire(bool) {
-    var foo = 'bar';
-    if (bool) {
-        console.log(foo);
-    } else {
-        console.log(foo);
-    }
-}
+// // Arrows
+// class TaskCollection {
+//     constructor( tasks = [] ) {
+//         this.tasks = tasks;
+//     }
+//     prepare() {
+//         this.tasks.forEach(task => {
+//             console.log(this)
+//         })
+//     }
+// }
 
-fire(false);
+// class Task{
+//     toGulp() {
+//         console.log('converting to gulp')
+//     }
+// }
 
-// Arrows
+// new TaskCollection([
+//     new Task, new Task, new Task
+// ]).prepare()
 
-var TaskCollection = function () {
-    function TaskCollection() {
-        var tasks = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+// // return not needed example
+// let names = ["Jeffrey", "Taylor", "Frank"]
 
-        _classCallCheck(this, TaskCollection);
+// // old way 
+// names = names.map(function(name){ 
+//     return name + ' is cool.'
+// })
 
-        this.tasks = tasks;
-    }
+// console.log(names)
 
-    _createClass(TaskCollection, [{
-        key: 'prepare',
-        value: function prepare() {
-            var _this = this;
+// // new
+// names = names.map((name) => name + ' is cool.')
 
-            this.tasks.forEach(function (task) {
-                console.log(_this);
-            });
-        }
-    }]);
+// console.log(names)
 
-    return TaskCollection;
-}();
+// old
+// function applyDiscount(cost, discount) {
+//     discount = discount || .10
 
-var Task = function () {
-    function Task() {
-        _classCallCheck(this, Task);
-    }
+//     return cost - (cost * discount)
+// }
 
-    _createClass(Task, [{
-        key: 'toGulp',
-        value: function toGulp() {
-            console.log('converting to gulp');
-        }
-    }]);
-
-    return Task;
-}();
-
-new TaskCollection([new Task(), new Task(), new Task()]).prepare();
-
-// return not needed example
-var names = ["Jeffrey", "Taylor", "Frank"];
-
-// old way 
-names = names.map(function (name) {
-    return name + ' is cool.';
-});
-
-console.log(names);
+// alert(applyDiscount(100))
 
 // new
-names = names.map(function (name) {
-    return name + ' is cool.';
-});
+function defaultDiscount() {
+    return .25;
+}
 
-console.log(names);
+function applyDiscount(cost) {
+    var discount = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultDiscount();
+
+    return cost - cost * discount;
+}
+
+alert(applyDiscount(100));
