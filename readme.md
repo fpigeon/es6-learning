@@ -2,7 +2,7 @@
 ## ES2015 Crash Course
 link [https://laracasts.com/series/es6-cliffsnotes/][1]
 
-## CH1
+## No more VAR, use LET and CONST
 ES6 introduces two new keywords for declaring variables: let and const.
 
 Replace variables`var` use `let` instead to avoid hoisting.
