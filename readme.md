@@ -94,6 +94,48 @@ function applyDiscount(cost, discount = .10) {
 alert(applyDiscount(100))
 ```
 
+## Crash and Rest
+We can use rest aka `...` to say take all the arguments and make them an array.
+
+```js
+//old
+function sum(...numbers) {
+    return numbers.reduce(function(prev, current){
+        return prev + current
+    })
+}
+// you can add as many arguments as you want
+console.log(sum(1, 2, 6))
+````
+
+```js
+// new 
+function sum(...numbers) {
+    return numbers.reduce((prev, current) => prev + current)
+}
+
+//you can add as many arguments as you want
+console.log(sum(1, 2, 6))
+```
+
+Spread operator is the opposite of rest and will take an array and make them single arguments.
+
+```js
+// spread operator
+function sum(x, y) {
+    return x + y
+}
+
+let nums = [5,10]
+
+//spread operator ...
+console.log(sum(...nums))
+```
+
+
+
+
+
 
 
 [1]: https://laracasts.com/series/es6-cliffsnotes/

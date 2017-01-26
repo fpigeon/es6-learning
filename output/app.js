@@ -59,14 +59,42 @@
 // alert(applyDiscount(100))
 
 // new
-function defaultDiscount() {
-    return .25;
+// function defaultDiscount(){
+//     return .25
+// }
+
+// function applyDiscount(cost, discount = defaultDiscount()) {
+//     return cost - (cost * discount)
+// }
+
+// alert(applyDiscount(100))
+
+// function sum(...numbers) {
+//     return numbers.reduce(function(prev, current){
+//         return prev + current
+//     })
+
+// }
+
+// console.log(sum(1, 2, 6, 9 , 100))
+
+// spread operator
+// function sum(x, y) {
+//     return x + y
+// }
+
+// let nums = [5,5]
+
+// //spread operator ...
+// console.log(sum(...nums))
+function sum() {
+    for (var _len = arguments.length, numbers = Array(_len), _key = 0; _key < _len; _key++) {
+        numbers[_key] = arguments[_key];
+    }
+
+    return numbers.reduce(function (prev, current) {
+        return prev + current;
+    });
 }
-
-function applyDiscount(cost) {
-    var discount = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultDiscount();
-
-    return cost - cost * discount;
-}
-
-alert(applyDiscount(100));
+//you can add as many arguments as you want
+console.log(sum(1, 2, 6));
