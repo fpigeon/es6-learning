@@ -88,19 +88,106 @@
 // function sum(...numbers) {
 //     return numbers.reduce((prev, current) => prev + current)
 // }
-// //you can add as many arguments as you want
+// //you can add as many arguments as yqou want
 // console.log(sum(1, 2, 6))
 
 //old 
-let name = 'foo' + 'bar' + 'baz'
+// let name = 'foo' + 'bar' + 'baz'
+
+// //new 
+// let name = "Frank"
+
+// let template = `
+//     <div class="ALert">
+//         <p>${name}</p>
+//     </div>
+// `.trim()
+
+// console.log(template)
+
+// old 
+// function getPerson() {
+//     let name = "John"
+//     let age = 25
+
+//     return {
+//         name: name,
+//         age: age
+//     }
+// }
+
+// old 
+// function getPerson() {
+//     let name = "John"
+//     let age = 25
+
+//     return {
+//         name, 
+//         age,
+//         greet: function() {
+//             return 'Hello ' + this.name
+//         }
+//     }
+// }
+
+// new 
+// function getPerson() {
+//     let name = "John"
+//     let age = 25
+
+//     return {
+//         name, 
+//         age,
+//         greet() {
+//             return `Hello ${this.name}`
+//         }
+//     }
+// }
+
+// console.log(getPerson().greet() );
+
+// Object Destructuring
+// allows an object to be broken down into variables
+
+// let data = {
+//     name: 'Karen',
+//     age: 32,
+//     results: ['foo', 'bar'],
+//     count: 30
+
+// }
+// new
+// function getData({ results, count }) { 
+//     console.log(results, count)
+// }
+
+// getData({
+//     name: 'Karen',
+//     age: 32,
+//     results: ['foo', 'bar'],
+//     count: 30
+// })
+
+//old
+function greet(person) {
+    let name = person.name
+    let age = person.age
+
+    console.log('old.Hello, ' + name + '. You are ' + age + ' years old.')
+}
+
+greet({
+    name: 'Luke',
+    age: 32
+})
 
 //new 
-let name = "Frank"
+function greet({name, age}) {
+    console.log(`Hello, ${name}. You are ${age} years old.`)
+}
 
-let template = `
-    <div class="ALert">
-        <p>${name}</p>
-    </div>
-`.trim()
+greet({
+    name: 'Luke',
+    age: 32
+})
 
-console.log(template)

@@ -153,9 +153,154 @@ let template = `
 console.log(template)
 ```
 
+## Object Shorthand
+ES6 includes a wide range of Object additions. In this episode, we'll review three of my favorites: property shorthand, short methods, and object destructuring.
+
+```js
+//old 
+function getPerson() {
+    let name = "John"
+    let age = 25
+
+    return {
+        name: name,
+        age: age
+    }
+}
+console.log(getPerson().name );
+```
+
+```js
+// new 
+function getPerson() {
+    let name = "John"
+    let age = 25
+
+    return {name, age}
+}
+
+console.log(getPerson().name );
+```
+
+Short method syntax in the greet method
+
+```js
+// old 
+ function getPerson() {
+     let name = "John"
+     let age = 25
+
+     return {
+         name, 
+         age,
+         greet: function() {
+             return 'Hello ' + this.name
+         }
+     }
+ }
 
 
+```
 
+```js
+// new 
+function getPerson() {
+    let name = "John"
+    let age = 25
+
+    return {
+        name, 
+        age,
+        greet() {
+            return `Hello ${this.name}`
+        }
+    }
+}
+```
+Object Destructuring allows an object to be broken down into variables
+
+```js
+let data = {
+    name: 'Karen',
+    age: 32,
+    results: ['foo', 'bar'],
+    count: 30
+
+}
+
+// old
+let results = data.results
+let count = data.count
+console.log(results, count)
+```
+
+```js
+//new 
+let { results, count } = data
+
+console.log(results, count)
+```
+
+And we can use Object Destructuring in methods as well
+
+```js
+// old
+function getData(data) { 
+    var results = data.results
+    var count = data.count
+
+    console.log(results, count)
+}
+
+getData({
+    name: 'Karen',
+    age: 32,
+    results: ['foo', 'bar'],
+    count: 30
+})
+```
+
+```js
+// new
+function getData({ results, count }) { 
+    console.log(results, count)
+}
+
+getData({
+    name: 'Karen',
+    age: 32,
+    results: ['foo', 'bar'],
+    count: 30
+})
+```
+Another example of Object Destructuring using a person
+
+```js
+//old
+function greet(person) {
+    let name = person.name
+    let age = person.age
+
+    console.log('old.Hello, ' + name + '. You are ' + age + ' years old.')
+}
+
+greet({
+    name: 'Luke',
+    age: 32
+})
+```
+
+```js
+//new 
+function greet({name, age}) {
+    console.log(`Hello, ${name}. You are ${age} years old.`)
+}
+
+greet({
+    name: 'Luke',
+    age: 32
+})
+```
 
 
 [1]: https://laracasts.com/series/es6-cliffsnotes/
