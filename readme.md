@@ -132,6 +132,26 @@ let nums = [5,10]
 console.log(sum(...nums))
 ```
 
+## Template Strings
+You can use the backticks to help you create elegant mult-line strings and it supports variable substitution.
+
+```js
+//old 
+let name = 'foo' + 'bar' + 'baz'
+```
+
+```js
+//new 
+let name = "Frank"
+
+let template = `
+    <div class="ALert">
+        <p>${name}</p>
+    </div>
+`
+
+console.log(template)
+```
 
 
 

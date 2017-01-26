@@ -85,8 +85,22 @@
 
 // //spread operator ...
 // console.log(sum(...nums))
-function sum(...numbers) {
-    return numbers.reduce((prev, current) => prev + current)
-}
-//you can add as many arguments as you want
-console.log(sum(1, 2, 6))
+// function sum(...numbers) {
+//     return numbers.reduce((prev, current) => prev + current)
+// }
+// //you can add as many arguments as you want
+// console.log(sum(1, 2, 6))
+
+//old 
+let name = 'foo' + 'bar' + 'baz'
+
+//new 
+let name = "Frank"
+
+let template = `
+    <div class="ALert">
+        <p>${name}</p>
+    </div>
+`.trim()
+
+console.log(template)
