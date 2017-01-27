@@ -27,7 +27,7 @@ class TaskCollection {
 }
 ```
 
-new 
+new
 
 ```js
 class TaskCollection {
@@ -61,7 +61,7 @@ You don't have to add return with arrow syntax it is implicit.
 let names = ["Jeffrey", "Taylor", "Frank"]
 
 // old
-names = names.map(function(name){ 
+names = names.map(function(name){
     return name + ' is cool.'
 })
 
@@ -109,7 +109,7 @@ console.log(sum(1, 2, 6))
 ````
 
 ```js
-// new 
+// new
 function sum(...numbers) {
     return numbers.reduce((prev, current) => prev + current)
 }
@@ -136,12 +136,12 @@ console.log(sum(...nums))
 You can use the backticks to help you create elegant mult-line strings and it supports variable substitution.
 
 ```js
-//old 
+//old
 let name = 'foo' + 'bar' + 'baz'
 ```
 
 ```js
-//new 
+//new
 let name = "Frank"
 
 let template = `
@@ -157,7 +157,7 @@ console.log(template)
 ES6 includes a wide range of Object additions. In this episode, we'll review three of my favorites: property shorthand, short methods, and object destructuring.
 
 ```js
-//old 
+//old
 function getPerson() {
     let name = "John"
     let age = 25
@@ -171,7 +171,7 @@ console.log(getPerson().name );
 ```
 
 ```js
-// new 
+// new
 function getPerson() {
     let name = "John"
     let age = 25
@@ -185,13 +185,13 @@ console.log(getPerson().name );
 Short method syntax in the greet method
 
 ```js
-// old 
+// old
  function getPerson() {
      let name = "John"
      let age = 25
 
      return {
-         name, 
+         name,
          age,
          greet: function() {
              return 'Hello ' + this.name
@@ -203,13 +203,13 @@ Short method syntax in the greet method
 ```
 
 ```js
-// new 
+// new
 function getPerson() {
     let name = "John"
     let age = 25
 
     return {
-        name, 
+        name,
         age,
         greet() {
             return `Hello ${this.name}`
@@ -235,7 +235,7 @@ console.log(results, count)
 ```
 
 ```js
-//new 
+//new
 let { results, count } = data
 
 console.log(results, count)
@@ -245,7 +245,7 @@ And we can use Object Destructuring in methods as well
 
 ```js
 // old
-function getData(data) { 
+function getData(data) {
     var results = data.results
     var count = data.count
 
@@ -262,7 +262,7 @@ getData({
 
 ```js
 // new
-function getData({ results, count }) { 
+function getData({ results, count }) {
     console.log(results, count)
 }
 
@@ -291,7 +291,7 @@ greet({
 ```
 
 ```js
-//new 
+//new
 function greet({name, age}) {
     console.log(`Hello, ${name}. You are ${age} years old.`)
 }
@@ -306,7 +306,7 @@ greet({
 ES6 classes are particularly appealing to those of us who predominantly work in traditional server-side languages.
 
 ```js
-//old 
+//old
 function User(username, email) {
     this.username = username
     this.email = email
@@ -323,7 +323,7 @@ console.dir(user)
 ```
 
 ```js
-//new 
+//new
 class User{
     constructor(username, email){
         this.username = username
@@ -372,7 +372,7 @@ class User{
     static register(...args) {
         return new User(...args)
     }
-    // getter 
+    // getter
     get foo(){
         return 'foo'
     }
@@ -459,7 +459,36 @@ import TaskCollection from './TaskCollection'
 ## Webpack
 But, now, let's switch over to Webpack, which has a much larger community and plugin ecosystem. We'll set up a Webpack config file, transpile ES2015, and even peek at Laravel Elixir 6.0's seamless Webpack integration.
 
+## Promise
+A holding spot for an operation that has yet not taken place.
 
+```js
+var promise = $this.http.get('some/path');
 
+promise.then(function(data) { //success
+
+});
+
+promise.catch(function(err) { // error
+
+});
+```
+
+Promise Makeup
+
+```js
+var timer = new Promise(function(resolve, reject) {
+    console.log('init promise')
+    setTimeout(function() {
+        console.log('timeout done')
+        resolve()
+    }, 5000)
+});
+timer.then(function() {
+    console.log('proceed now that timer has finished')
+})
+```
+
+## String Additions
 
 [1]: https://laracasts.com/series/es6-cliffsnotes/
