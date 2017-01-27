@@ -510,6 +510,37 @@ if (title.endsWith('ing') ) { //checks the end of string
 console.log(title.repeat(100))
 ```
 
+## Array Find and Array includes
+```js
+console.log(
+    // logs boolean if includes 8 in the array
+    [2, 4, 6, 8, 10].includes(8) //true
+)
 
+console.log(
+    // logs odd number in array
+    [2, 4, 6, 8, 10, 11].find(item => item % 2 ) //11
+)
+```
+
+```js
+class User {
+    constructor(name, isAdmin = false) {
+        this.name = name
+        this.isAdmin = isAdmin
+    }
+
+}
+
+let users = [
+    new User('Frank', false),
+    new User('Jeffrey', true),
+    new User('Jack')
+]
+//log first user's name that is an admin
+console.log(
+    users.find(user => user.isAdmin).name
+)
+```
 
 [1]: https://laracasts.com/series/es6-cliffsnotes/

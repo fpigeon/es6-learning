@@ -46,6 +46,8 @@
 
 	'use strict';
 	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
 	// import TaskCollection from './TaskCollection'
 	
 	// new TaskCollection([
@@ -54,24 +56,36 @@
 	//     'eat cake'
 	// ]).dump()
 	
-	var title = 'Red Rising';
+	// let title = 'Red Rising'
 	
-	if (title.includes('Red')) {
-	    //checks entire string
-	    console.log(title + ' includes Red');
-	}
+	// if (title.includes('Red') ) { //checks entire string
+	//     console.log(`${title} includes Red`)
+	// }
 	
-	if (title.startsWith('Red')) {
-	    //checks beginning of string
-	    console.log(title + ' starts with Red');
-	}
+	// if (title.startsWith('Red') ) { //checks beginning of string
+	//     console.log(`${title} starts with Red`)
+	// }
 	
-	if (title.endsWith('ing')) {
-	    //checks the end of string
-	    console.log(title + ' ends with ing');
-	}
+	// if (title.endsWith('ing') ) { //checks the end of string
+	//     console.log(`${title} ends with ing`)
+	// }
 	
-	console.log(title.repeat(100));
+	// console.log(title.repeat(100))
+	
+	var User = function User(name) {
+	    var isAdmin = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+	
+	    _classCallCheck(this, User);
+	
+	    this.name = name;
+	    this.isAdmin = isAdmin;
+	};
+	
+	var users = [new User('Frank', false), new User('Jeffrey', true), new User('Jack')];
+	
+	console.log(users.find(function (user) {
+	    return user.isAdmin;
+	}).name);
 
 /***/ }
 /******/ ]);
