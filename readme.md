@@ -490,5 +490,26 @@ timer.then(function() {
 ```
 
 ## String Additions
+String Addition examples
+
+```js
+let title = 'Red Rising'
+
+if (title.includes('Red') ) { //checks entire string
+    console.log(`${title} includes Red`)
+}
+
+if (title.startsWith('Red') ) { //checks beginning of string
+    console.log(`${title} starts with Red`)
+}
+
+if (title.endsWith('ing') ) { //checks the end of string
+    console.log(`${title} ends with ing`)
+}
+
+console.log(title.repeat(100))
+```
+
+
 
 [1]: https://laracasts.com/series/es6-cliffsnotes/

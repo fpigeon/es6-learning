@@ -42,52 +42,36 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 	
-	var _TaskCollection = __webpack_require__(1);
+	// import TaskCollection from './TaskCollection'
 	
-	var _TaskCollection2 = _interopRequireDefault(_TaskCollection);
+	// new TaskCollection([
+	//     'go to the store',
+	//     'finish screen cast',
+	//     'eat cake'
+	// ]).dump()
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var title = 'Red Rising';
 	
-	new _TaskCollection2.default(['go to the store', 'finish screen cast', 'eat cake']).dump();
-
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
-
-	"use strict";
+	if (title.includes('Red')) {
+	    //checks entire string
+	    console.log(title + ' includes Red');
+	}
 	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
+	if (title.startsWith('Red')) {
+	    //checks beginning of string
+	    console.log(title + ' starts with Red');
+	}
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	if (title.endsWith('ing')) {
+	    //checks the end of string
+	    console.log(title + ' ends with ing');
+	}
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var TaskCollection = function () {
-	    function TaskCollection() {
-	        var tasks = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-	
-	        _classCallCheck(this, TaskCollection);
-	
-	        this.tasks = tasks;
-	    }
-	
-	    _createClass(TaskCollection, [{
-	        key: "dump",
-	        value: function dump() {
-	            console.log(this.tasks);
-	        }
-	    }]);
-	
-	    return TaskCollection;
-	}();
-	
-	exports.default = TaskCollection;
+	console.log(title.repeat(100));
 
 /***/ }
 /******/ ]);
