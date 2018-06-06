@@ -2,6 +2,8 @@
 ## ES2015 Crash Course
 link [https://laracasts.com/series/es6-cliffsnotes/][1]
 
+These are my notes from the ES2015 Crash Course by Jeffrey Way.
+
 ## No more VAR, use LET and CONST
 ES6 introduces two new keywords for declaring variables: let and const.
 
